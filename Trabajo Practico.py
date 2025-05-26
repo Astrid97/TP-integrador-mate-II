@@ -1,3 +1,40 @@
+#Estadisticas sobre DNIs y control de flujo
+#Recorriendo DNIs y contando la frecuencia de digitos por DNI
+DNIs = [43307622, 41854035, 37057172, 37378875, 38252054]
+
+for dni in DNIs:
+    print(f"Analizando DNI: {dni}")
+
+#Diccionario {} y for para saber la cantidad de numeros x que tiene un DNI. Por ejemplo tiene dos numeros: dos
+    frecuenciaDigitos = {}
+
+    for digito in str(dni):
+        if digito in frecuenciaDigitos:
+            frecuenciaDigitos[digito] += 1
+        else:
+            frecuenciaDigitos[digito] = 1
+
+    print (f"Frecuencia de digitos en {dni}: {frecuenciaDigitos}")
+
+#Suma digitos de cada DNI
+    suma = 0
+    for digito in str(dni):
+        suma += int(digito)
+
+    print(f"Suma total de digitos en {dni}: {suma}")
+
+#Diversidad numerica alta
+    digitosUnicos = []
+
+    for digito in str(dni):
+        if digito not in digitosUnicos:
+            digitosUnicos.append(digito)
+
+    if len(digitosUnicos) >= 6:
+        print("Diversidad numerica alta")
+    else:
+        print("Diversidad numerica normal")
+
 #años de nacimiento y logica bisiesta
 #Pregunto cuantos usuarios son y recolecto sus años de nacimiento en una lista
 usuarios = int(input("¿Los datos de cuantas personas seran ingresados?: "))
@@ -9,7 +46,7 @@ producto_cartesiano = []
 for i in range(usuarios):
     año = int(input(f"Ingrese el año {i+1}: "))
     Lista_años.append(año)
-              
+
 # Contar cuántos nacieron en años pares e impares utilizando estructuras repetitivas.
 impares = 0
 pares = 0
@@ -69,7 +106,9 @@ for año in Lista_años:
 
 print(f"El producto cartesiano de lista_años = {Lista_años} y lista_edades = {lista_edades} es: {producto_cartesiano}")
 
-    
+
+
+
 
     
             
