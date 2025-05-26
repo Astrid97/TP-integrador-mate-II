@@ -3,6 +3,8 @@
 usuarios = int(input("¿Los datos de cuantas personas seran ingresados?: "))
 
 Lista_años = []
+lista_edades = []
+producto_cartesiano = []
 
 for i in range(usuarios):
     año = int(input(f"Ingrese el año {i+1}: "))
@@ -51,6 +53,23 @@ if Especial > 0 :
     print("Tenemos un año especial")
     
         
- 
+# Cálculo de edades y producto cartesiano
+for año in Lista_años:
+    año_actual = 2025
+
+    if (año < año_actual):
+        lista_edades.append(año_actual - año)
+    else:
+        "El año de nacimiento no puede ser mayor a año actual"
+
+
+for año in Lista_años:
+    for edad in lista_edades:
+        producto_cartesiano.append([año, edad])
+
+print(f"El producto cartesiano de lista_años = {Lista_años} y lista_edades = {lista_edades} es: {producto_cartesiano}")
+
+    
+
     
             
