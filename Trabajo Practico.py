@@ -37,15 +37,10 @@ for dni in DNIs:
 
 #años de nacimiento y logica bisiesta
 #Pregunto cuantos usuarios son y recolecto sus años de nacimiento en una lista
-usuarios = int(input("¿Los datos de cuantas personas seran ingresados?: "))
 
-Lista_años = []
+Lista_años = [1999, 1997,1992,1993,1994]
 lista_edades = []
 producto_cartesiano = []
-
-for i in range(usuarios):
-    año = int(input(f"Ingrese el año {i+1}: "))
-    Lista_años.append(año)
 
 # Contar cuántos nacieron en años pares e impares utilizando estructuras repetitivas.
 impares = 0
