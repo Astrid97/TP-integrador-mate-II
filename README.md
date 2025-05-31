@@ -17,7 +17,9 @@ Lógica Matemática y Expresiones Condicionales
 Responsabilidades:
 -Redactar al menos 2 expresiones lógicas en lenguaje natural basadas en los conjuntos.
 -Determinar sus resultados con los datos del grupo.
--En el programa: implementar las condiciones lógicas en Python (ej. "si hay un dígito común", etc).
+-En el programa: implementar las condiciones lógicas en Python (ej. "si hay un dígito común", etc);
+-Realizar las operaciones: unión, intersección, diferencia, diferencia simétrica entre conjuntos en el programa.
+-Revisión general del flujo del código.
 -Documentar en el informe cuál fue la lógica implementada y cuál no.
 -En el video: explica una expresión lógica redactada y cómo se implementó en el código.
 
