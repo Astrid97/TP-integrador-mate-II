@@ -1,3 +1,82 @@
+# Desarrollo del programa mediante funciones
+
+dnis = [43307622,41854035,37057172,37378875,38252054]  
+
+# Eliminar los digitos duplicados de cada elemento de la lista
+# Ordenar el resultado de menor a mayor
+
+
+def descomponer_dni(dni):
+    
+    digitos = []
+    
+    # Manejo del caso especial 0
+    if dni == 0:
+        return [0]
+    
+    # Extracción de dígitos de derecha a izquierda
+    while dni > 0:
+        digito = dni % 10  # Obtiene el último dígito
+        digitos.append(digito)
+        dni = dni // 10    # Elimina el último dígito
+    # Los dígitos se obtuvieron en orden inverso, así que invertimos la lista
+    digitos.reverse()
+
+    return digitos
+
+
+def digitos_unicos(digitos):
+    # Inicializamos una lista de 10 posiciones en false
+    encontrados = [False] * 10 #[false,false,false,false,false,false,false,false,false,false]
+    unicos = []
+    
+    for d in digitos: #recorremos digito a digito ("d" es cada elemento de la lista)
+        if not encontrados[d]: # si la posición del digito que estamos evaluando ("d") se encuentra en false
+            unicos.append(d) # lo agrego a la lista
+            encontrados[d] = True  #actualizo la posicion a true
+    
+    return unicos
+
+def ordenar_counting(dig_uni):   
+    # Creo una lista de diez posiciones en 0
+    conteo = [0] * 10
+    
+    # recorrecomos a la lista de digitos unicos, teniendo en cuenta que tiene que incluir valores de 0 a 9
+    for d in dig_uni:
+        if d == 0:
+            conteo[0] = 10 # utilizamos el 10 como referencia a 0 (si es que existe)
+        else:
+            conteo[d] = d # en la posición de la lista conteo, guardamos el valor del digito
+    
+    #Reconstruimos la lista ordenada
+    ordenados = []
+    for c in conteo:  # Recorremos la lista de posiciones existentes
+        if c == 10:  # Si el valor en la posicion es igual a 10, sabemos que es 0 y lo reemplazamos
+            ordenados.append(str(0))
+        elif c > 0 : #mientras los valores siguientes no sean 0, lo agregamos
+            ordenados.append(str(c))
+    return "{" + ", ".join(ordenados) + "}"
+
+
+
+def recorrer_dnis(dnis):
+    print(f"Todos los dni {dnis}")
+    con = 1
+    for dni in dnis:
+        digitos = descomponer_dni(dni)
+        print(f"DNI {con}: {dni}")
+        print(f"Dígitos: {digitos}")
+        dig_uni = digitos_unicos(digitos)
+        print(f"Digitos unicos: {dig_uni}")
+        ord = ordenar_counting(dig_uni)
+        print(f"Ordenado: {ord} \n")
+        con += 1
+    return ord
+
+fun = recorrer_dnis(dnis)
+
+
+
 #Estadisticas sobre DNIs y control de flujo
 #Recorriendo DNIs y contando la frecuencia de digitos por DNI
 DNIs = [43307622, 41854035, 37057172, 37378875, 38252054]
