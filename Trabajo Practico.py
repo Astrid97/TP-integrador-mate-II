@@ -181,7 +181,45 @@ for año in Lista_años:
 print(f"El producto cartesiano de lista_años = {Lista_años} y lista_edades = {lista_edades} es: {producto_cartesiano}")
 
 
+#Cálculo y visualización de: unión, intersección, diferencias y diferencia simétrica
 
+def union(A, C):
+    return A | C
+
+def interseccion(A, C):
+    return A & C
+
+def diferencia(A, C):
+    return A - C
+
+def diferencia_simetrica(A, C):
+    return A ^ C
+
+def operaciones_conjuntos(A, C): #Realiza operaciones de conjuntos entre A y B
+    
+    
+    return {
+        'Conjunto A': A,
+        'Conjunto C': C,
+        'Unión (A | C)': union(A,C),
+        'Intersección (A & C)': interseccion(A,C),
+        'Diferencia (A - C)': diferencia(A,C),
+        'Diferencia (C - A)': diferencia(C,A),
+        'Diferencia simétrica (A ^ C)': diferencia_simetrica(A,C)
+    }
+
+A = {4,3,3,0,7,6,2,2}
+C = {3,7,0,5,7,1,7,2}
+
+resultados = operaciones_conjuntos(A, C)
+
+print("Resultados para:")
+print(f"A = {A} ")
+print(f"C = {C} \n")
+
+print("Operaciones con conjuntos:")
+for operacion, resultado in resultados.items():
+    print(f"{operacion}: {resultado}")
 
 
     
