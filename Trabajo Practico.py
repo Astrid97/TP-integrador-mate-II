@@ -223,4 +223,23 @@ for operacion, resultado in resultados.items():
 
 
     
-            
+ #“Si la intersección entre conjuntos contiene más de 3 elementos, se considera que es una intersección con alta diversidad numérica” 
+
+
+
+def alta_diversidad_numerica(c1, c2):
+    inter = interseccion(c1,c2)
+    return len(inter) > 3  #si la interseccion tiene mas de 3 elementos, devuelve true. Caso contrario, devuelve false
+
+
+
+#“Si la diferencia entre dos conjuntos (por ejemplo, A - B) tiene la misma cantidad de elementos que el primer conjunto (A), entonces no había elementos comunes entre los dos conjuntos iniciales”          
+
+def conjuntos_disjuntos(c1, c2):
+
+    dif = diferencia(c1,c2)
+    return len(dif) == len(c1) # devuelve true si son disjuntos, y false si tienen elementos en comun
+
+print(f"A  = {A} /n C  = {C} /n")
+print(f"¿A y C tienen alta diversidad numérica?: {alta_diversidad_numerica(A, C)}")
+print(f"¿A y C son disjuntos?: {conjuntos_disjuntos(A, C)}")
