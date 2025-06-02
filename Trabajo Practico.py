@@ -195,7 +195,7 @@ def diferencia(A, C):
 def diferencia_simetrica(A, C):
     return A ^ C
 
-def operaciones_conjuntos(A, C): #Realiza operaciones de conjuntos entre A y B
+def operaciones_conjuntos(A, C): #Realiza operaciones de conjuntos entre A y C
     
     
     return {
@@ -208,8 +208,8 @@ def operaciones_conjuntos(A, C): #Realiza operaciones de conjuntos entre A y B
         'Diferencia simétrica (A ^ C)': diferencia_simetrica(A,C)
     }
 
-A = {4,3,3,0,7,6,2,2}
-C = {3,7,0,5,7,1,7,2}
+A = {4,3,3,0,7,6,2,2} # Utilizamos el dni en la posición [0] de la lista como conjunto
+C = {3,7,0,5,7,1,7,2} # lo mismo, pero con la posicion [2]
 
 resultados = operaciones_conjuntos(A, C)
 
@@ -223,17 +223,16 @@ for operacion, resultado in resultados.items():
 
 
     
- #“Si la intersección entre conjuntos contiene más de 3 elementos, se considera que es una intersección con alta diversidad numérica” 
-
-
+ #“Si la intersección entre conjuntos contiene más de 3 elementos, se considera que es una intersección con
+ # alta diversidad numérica” 
 
 def alta_diversidad_numerica(c1, c2):
     inter = interseccion(c1,c2)
     return len(inter) > 3  #si la interseccion tiene mas de 3 elementos, devuelve true. Caso contrario, devuelve false
 
 
-
-#“Si la diferencia entre dos conjuntos (por ejemplo, A - B) tiene la misma cantidad de elementos que el primer conjunto (A), entonces no había elementos comunes entre los dos conjuntos iniciales”          
+#“Si la diferencia entre dos conjuntos (por ejemplo, A - B) tiene la misma cantidad de elementos que el primer 
+# conjunto (A), entonces no había elementos comunes entre los dos conjuntos iniciales”          
 
 def conjuntos_disjuntos(c1, c2):
 
